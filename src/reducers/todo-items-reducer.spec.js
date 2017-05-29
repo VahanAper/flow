@@ -1,6 +1,8 @@
+// @flow
+
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
-import { todoItemsReducer } from './todo-items-reducer';
+import todoItemsReducer from './todo-items-reducer';
 
 describe('todo-items-reducer', () => {
   const initialTodoItems = [
