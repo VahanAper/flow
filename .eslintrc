@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb",
+  "extends": ["airbnb", "plugin:react/recommended"],
   "plugins": [
       "react",
       "jsx-a11y",
@@ -7,16 +7,20 @@
       "flow-vars"
   ],
   "env": {
-    "es6": true
+    "es6": true,
+    "browser": true
   },
   "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true
+      "experimentalObjectRestSpread": true,
+      "jsx": true
     }
   },
   "rules": {
-    "linebreak-style": 0
+    "linebreak-style": 0,
+    "no-unused-vars": 1,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   }
 }
