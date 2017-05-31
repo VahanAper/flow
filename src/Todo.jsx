@@ -1,15 +1,31 @@
-import React, { PropTypes } from 'react';
+/* @flow */
 
-const Todo = ({ text, completed, onClick }) => (
-  <li onClick={onClick}>
-    {text}
-  </li>
-);
+import React from 'react';
 
-Todo.propType = {
-  text: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
+type TodoArgs = {
+  text: string,
+  completed: boolean,
+  onClick: Function
 };
 
-export default Todo;
+export default class Todo extends React.Component {
+  constructor(props: TodoArgs) {
+    super(props);
+  }
+
+  props: TodoArgs;
+
+  render() {
+    return (
+      <li>
+        <div
+          onClick={this.props.onClick}
+          role="button"
+          tabIndex="0"
+        >
+          {this.props.text}
+        </div>
+      </li>
+    );
+  }
+}
